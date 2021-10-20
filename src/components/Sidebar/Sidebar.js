@@ -14,10 +14,10 @@ function Sidebar() {
             </div>
              <div className="nav">
                  <ul>
-                     <li> <a href="#"><MdAllInbox/> Inbox</a> <span>10</span></li>
-                     <li> <a href="#"><MdOutlinedFlag/>Flagged</a><span>10</span></li>
-                     <li><a href="#"><MdWarningAmber/>Spam</a><span>10</span></li>
-                     <li><a href="#"><BsTrash/> Deleted</a><span>10</span></li>
+                     <li> <a href="/#"><MdAllInbox/> Inbox</a> <span>10</span></li>
+                     <li> <a href="/#"><MdOutlinedFlag/>Flagged</a><span>10</span></li>
+                     <li><a href="/#"><MdWarningAmber/>Spam</a><span>10</span></li>
+                     <li><a href="/#"><BsTrash/> Deleted</a><span>10</span></li>
                  </ul>
              </div>
         </div>
