@@ -10,7 +10,7 @@ import { useState,useContext } from 'react';
 
 const MailItem = ({id,content,date,number,isSpam,isRead,isFlagged}) => {
  
-   const {mail,setMail,read,setRead,spam,setSpam,flag,setFlag} = useContext(mailContext)
+   const {setMail,read,setRead,spam,setSpam,flag,setFlag} = useContext(mailContext)
 
    const [item, setItem] = useState({
        id: id,

@@ -34,7 +34,7 @@ useEffect(() => {
        
     })
    
-}, [search])
+},[search])
 
 const handleClear = ()=>{
     setSearch('')
