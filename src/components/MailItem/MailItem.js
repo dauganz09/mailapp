@@ -6,7 +6,7 @@ import { mailContext } from '../../context/MailContext';
 
 import { BsTrash } from "react-icons/bs";
 import { useState,useContext } from 'react';
-import api from '../../api/mails'
+
 
 const MailItem = ({id,content,date,number,isSpam,isRead,isFlagged}) => {
  

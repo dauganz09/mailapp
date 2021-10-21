@@ -1,8 +1,8 @@
-import { useState,useContext,useEffect } from 'react';
+import { useContext,useEffect } from 'react';
 import './Main.css'
 import { MdSearch,MdFilterAlt ,MdClose} from "react-icons/md";
 import { MailItem } from '..';
-import { mailData } from '../../data';
+
 import { mailContext } from '../../context/MailContext';
 import api from '../../api/mails'
 
@@ -18,7 +18,7 @@ export const Label = ({text}) =>{
 
  const Main = () => {
 
-    const {mail,search,setSearch,setRead,setMail} = useContext(mailContext)
+    const {mail,search,setSearch,setMail} = useContext(mailContext)
     
     
     const handleChange= (val)=>{
@@ -57,7 +57,7 @@ const handleClear = ()=>{
        <div className="header">
           <div className="searchbox">
               <input type="text" value={search} onChange={e=>handleChange(e.target.value)}  /> 
-              {search == '' ? <MdSearch/> : <MdClose onClick={handleClear}/> }
+              {search === '' ? <MdSearch/> : <MdClose onClick={handleClear}/> }
               
          </div>
          <div className="filter"><MdFilterAlt/></div>
