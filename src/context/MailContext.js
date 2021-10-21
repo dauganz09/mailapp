@@ -59,9 +59,8 @@ const MailContextProvider = ({children}) => {
             read,
             setRead,
             trash,
-            setTrash,
-            search,
-            setSearch}}>
+            setTrash
+           }}>
             {children}
         </mailContext.Provider>
     );
