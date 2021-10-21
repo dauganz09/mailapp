@@ -1,6 +1,5 @@
 import './MailItem.css'
 import {MdChatBubbleOutline,
-    MdFlag,
     MdOutlinedFlag,
     MdWarningAmber } from "react-icons/md";
 
@@ -24,7 +23,7 @@ const MailItem = ({content,date,number}) => {
             <div className="mail__buttons">
               <MdWarningAmber/>
               <BsTrash/>
-              <MdFlag/>
+              <MdOutlinedFlag/>
     
             </div>
            </div>
