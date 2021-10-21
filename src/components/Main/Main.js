@@ -24,21 +24,21 @@ export const Label = ({text}) =>{
     
     const handleChange= (val)=>{
         setSearch(val);
-
+        const fetchSearch = () => {
+            api.get(`/mails?q=${search}`)
+            .then((response) => {
+                setMail(response.data);
+                
+               
+            }) }
+        
+            fetchSearch();
         }
 
-useEffect(() => {
-    const fetchSearch = () => {
-    api.get(`/mails?q=${search}`)
-    .then((response) => {
-        setMail(response.data);
-        
-       
-    }) }
-
-    fetchSearch();
+// useEffect(() => {
+    
    
-},[search])
+// },[])
 
 const handleClear = ()=>{
     setSearch('')
