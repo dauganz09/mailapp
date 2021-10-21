@@ -27,12 +27,15 @@ export const Label = ({text}) =>{
         }
 
 useEffect(() => {
+    const fetchSearch = () => {
     api.get(`/mails?q=${search}`)
     .then((response) => {
         setMail(response.data);
         
        
-    })
+    }) }
+
+    fetchSearch();
    
 },[search])
 
