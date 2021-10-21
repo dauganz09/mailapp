@@ -1,7 +1,7 @@
 import { useState,useContext,useEffect } from 'react';
 import './Main.css'
 import { MdSearch,MdFilterAlt ,MdClose} from "react-icons/md";
-import { MailItem } from '..';
+import {MailItem} from '../index';
 
 import { mailContext } from '../../context/MailContext';
 import api from '../../api/mails'
