@@ -1,4 +1,4 @@
-import { useContext,useEffect } from 'react';
+import { useState,useContext,useEffect } from 'react';
 import './Main.css'
 import { MdSearch,MdFilterAlt ,MdClose} from "react-icons/md";
 import { MailItem } from '..';
@@ -18,7 +18,8 @@ export const Label = ({text}) =>{
 
  const Main = () => {
 
-    const {mail,search,setSearch,setMail} = useContext(mailContext)
+    const {mail,setMail} = useContext(mailContext)
+    const [search,setSearch] = useState(['']);
     
     
     const handleChange= (val)=>{

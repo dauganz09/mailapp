@@ -12,7 +12,7 @@ const MailContextProvider = ({children}) => {
     const [flag,setFlag]= useState(0);
     const [read,setRead] = useState(0);
     const [trash,setTrash] = useState(0);
-    const [search,setSearch] = useState([' ']);
+    
 
     
     // const getMails = async () => {
