@@ -1,5 +1,5 @@
 import './Main.css'
-import { IconName, MdSearch,MdFilterAlt } from "react-icons/md";
+import { MdSearch,MdFilterAlt } from "react-icons/md";
 import { MailItem } from '..';
 import { mailData } from '../../data';
 
