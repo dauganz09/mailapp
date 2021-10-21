@@ -1,7 +1,10 @@
+import { useState,useContext,useEffect } from 'react';
 import './Main.css'
-import { MdSearch,MdFilterAlt } from "react-icons/md";
+import { MdSearch,MdFilterAlt ,MdClose} from "react-icons/md";
 import { MailItem } from '..';
 import { mailData } from '../../data';
+import { mailContext } from '../../context/MailContext';
+import api from '../../api/mails'
 
 export const Label = ({text}) =>{
   
@@ -14,12 +17,47 @@ export const Label = ({text}) =>{
 }
 
  const Main = () => {
+
+    const {mail,search,setSearch,setRead,setMail} = useContext(mailContext)
+    
+    
+    const handleChange= (val)=>{
+        setSearch(val);
+
+        }
+
+useEffect(() => {
+    api.get(`/mails?q=${search}`)
+    .then((response) => {
+        setMail(response.data);
+        
+       
+    })
+   
+}, [search])
+
+const handleClear = ()=>{
+    setSearch('')
+    api.get("/mails")
+    .then((response) => {
+        setMail(response.data);
+        
+        console.log(response.data)
+    })
+}
+
+
+   
+
+    
+    
+
     return (
     <div className="main">
        <div className="header">
           <div className="searchbox">
-              <input type="text" /> 
-              <MdSearch/>
+              <input type="text" value={search} onChange={e=>handleChange(e.target.value)}  /> 
+              {search == '' ? <MdSearch/> : <MdClose onClick={handleClear}/> }
               
          </div>
          <div className="filter"><MdFilterAlt/></div>
@@ -28,9 +66,15 @@ export const Label = ({text}) =>{
        <Label text='Last Month'/>
       
        <div className="content">
-           {mailData.map(({content,date,number},i)=>(
+           {mail.map(({id,content,date,number,isSpam,isRead,isFlagged},i) =>(
              
-             <MailItem content={content}date={date} number={number}/>
+             <MailItem  key={i} id={id} content={content} 
+                                date={date}
+                                number={number}
+                                isSpam={isSpam}
+                                isRead={isRead}
+                                isFlagged={isFlagged}
+             />
 
            ))
            }
