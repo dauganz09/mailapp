@@ -6,7 +6,10 @@ import { MdMenu,
 import { BsTrash } from "react-icons/bs";
 
 
-function Sidebar() {
+function Sidebar({mail}) {
+
+    const {inbox,flagged,spam,trash} = mail
+
     return (
         <div className="sidebar">
             <div className="sidebar__button">
@@ -14,10 +17,10 @@ function Sidebar() {
             </div>
              <div className="nav">
                  <ul>
-                     <li> <a href="/#"><MdAllInbox/> Inbox</a> <span>10</span></li>
-                     <li> <a href="/#"><MdOutlinedFlag/>Flagged</a><span>10</span></li>
-                     <li><a href="/#"><MdWarningAmber/>Spam</a><span>10</span></li>
-                     <li><a href="/#"><BsTrash/> Deleted</a><span>10</span></li>
+                     <li> <a href="/#"><MdAllInbox/> Inbox</a> {inbox && <span>{inbox}</span>}</li>
+                     <li> <a href="/#"><MdOutlinedFlag/>Flagged</a>{flagged && <span>{flagged}</span>}</li>
+                     <li><a href="/#"><MdWarningAmber/>Spam</a>{spam && <span>{spam}</span>}</li>
+                     <li><a href="/#"><BsTrash/> Deleted</a>{trash && <span>{trash}</span>}</li>
                  </ul>
              </div>
         </div>
