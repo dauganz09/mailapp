@@ -1,23 +1,21 @@
 import './App.css';
 import { useState } from 'react';
 import { Main, Sidebar } from './components';
+import MailContextProvider from './context/MailContext';
 
 function App() {
 
-  const [mail, setMail] = useState({
-    inbox : null,
-    flagged : null,
-    spam : null,
-    trash :null
-  })
+  
 
   return (
+    <MailContextProvider>
     <div className="App">
       {/* Sidebar */}
-      <Sidebar mail={mail}/>
+      <Sidebar/>
       {/* Main */}
       <Main/>
     </div>
+    </MailContextProvider>
   );
 }
 
